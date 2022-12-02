@@ -1,0 +1,1281 @@
+
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.helloworld;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ *
+ * @author user
+ */
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int ax=6;
+           List<Integer> arr = new ArrayList<>();
+           Collections.addAll(arr,1, 4, 3, 5, 6, 2);
+              // int [] c=encodeNumber(1200);
+           //   int[] d=doIntegerBasedRounding(b,3);
+              
+            //  insertionSort2(ax,arr);
+//              for(int i=0;i<d.length;i++){
+//////  
+//char [] v= {'a', 'b', 'c'};
+//System.out.println(abc(v,-1,2));   
+int vl[]={9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
+updateMileagecounter(vl,13);
+
+//for (int i=0; i<v.length; i++) {
+//    System.out.println(v[i]);
+//}
+//  // System.out.println(Arrays.toString(encodeNumber(1200)));
+//             }
+//              
+//int [] v={2,1,1,4,-1,-1};
+//int [] df={2};
+//            System.out.println(isMartian(df));
+
+// List myArray = new ArrayList();
+//        LinkedList myLL = new LinkedList();
+
+
+//        for (int i=0; i<100000; i++) {
+//            myArray.add(i, i);
+//            myLL.add(i, i);
+//        }
+//
+//        final long startA = System.nanoTime();
+//        myArray.remove(99000);
+//
+//        final long endA= System.nanoTime();
+//
+//        final long totalA = endA-startA;
+//
+//        System.out.println("arraylist");
+//        System.out.println(totalA);
+//
+//        final long startLL = System.nanoTime();
+//        myLL.remove(99000);
+//        final long endLL= System.nanoTime();
+//
+//        final long totalLL = endLL-startLL;
+//        System.out.println("linked list");
+//        System.out.println(totalLL);
+
+       
+    }
+    static int helpercounter(int a,int miles){
+        for(int j=0;j<miles;j++){
+        
+            a=a+1;
+             
+        }
+        
+        return a;
+    }
+    static void updateMileagecounter(int[ ] a, int miles){
+      //int sum=0;
+    //  if (miles == 1 ){a[0]=a[0]+1;}
+        
+            
+        for(int i=0;i<a.length;i++ ){
+             
+            //if(a[i] == 0) continue;
+             a[i]=helpercounter(a[i],miles);
+              
+         
+        
+    
+    }
+    for(int i=0;i<a.length;i++){
+        System.out.println(a[i]);}
+        
+    }
+    
+    static  int isAllPossibilities(int[ ] a){
+    boolean flag=false;
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<a.length;j++){
+                if(a[i] == j){
+                flag=true;break;
+                }else{flag=false;}
+            }
+        if(!flag) break;
+        }
+    
+    if(!flag){return 0;}
+return 1;
+    }
+    
+    static double evalhelper(double n,double arr,double val){
+    double mul=1;
+        for(int i=0;i<n-1;i++){
+        mul=mul*val;
+        }
+return mul*arr;  
+    }
+    static double eval(double x, int[ ] a){
+       double val=a.length;
+    double sum=0;
+        for(int i=a.length-1;i>=0;i--){
+         sum=sum + evalhelper(val,a[i],x);
+            val--;
+        }
+ 
+      return sum;  
+    }
+    
+    
+    static int helpercluster(int [ ]a){
+    
+         int count=a[0],count2=1;
+         //newarry[count2]=count;
+         for(int i=0;i<a.length;i++){
+//if(count2 ==a.length)break;
+             
+                   if(count != a[i]){
+                    count2++;
+                   // newarry[count2]=a[i];
+                   // break;
+                   count=a[i];        
+               }
+
+         }
+  return count2;
+    }
+    static int[] clusterCompression(int[ ] a){
+    
+      
+        int [] newarry=new int[helpercluster(a)];
+        
+        System.out.println(newarry.length);
+        
+         int count=a[0],count2=0;
+         newarry[count2]=count;
+         for(int i=1;i<a.length;i++){
+//if(count2 ==a.length)break;
+             
+                   if(count != a[i]){
+                    count2++;
+                    newarry[count2]=a[i];
+                   // break;
+                   count=a[i];        
+               }
+
+         }
+         
+       // System.out.println(count2);
+    return newarry;
+    }
+    static int secondlargest(int[ ] a){
+    int max=0,max2=0;
+        for(int i=0;i<a.length;i++){
+        
+            if(a[i]>max){
+            max=a[i];
+            }
+            
+        }
+        
+        for(int i=0;i<a.length;i++){
+           
+            if(a[i]>max2 && a[i]!=max){
+            max2=a[i];
+            }
+            
+          }
+        if(max2 == 0) return -1;
+    return max2;
+    }
+    
+    static  int isOddHeavy(int[ ] a){
+       boolean flag=false;
+        for(int i=0;i<a.length;i++){
+        
+            if(a[i]%2!=0){
+            
+                for(int j=0;j<a.length;j++){
+                
+                    if(a[j]%2==0){
+                        flag = a[i] > a[j];
+                    }
+                }
+            
+            }
+            
+           // if(flag) break;
+            
+        }
+        if(!flag) return 0;
+ return 1;
+    }
+    
+    static char[ ] abc(char[ ] a, int start, int len){
+    
+        char [] newchar=new char[len];
+        int count=0;
+        if(start+len > a.length || start < 0 || len < 0){
+          return newchar;
+        }
+        
+      
+       
+            for(int j=start;j<a.length;j++){
+                
+                newchar[count]=a[j];
+                count++;
+                
+                 if(count == len){
+            break;}
+            }
+            
+                
+          
+            
+           
+            
+       
+        
+    
+   return newchar; 
+    }
+    
+    static int isNormal(int n){
+        boolean flag=false;
+        if(n==0 ) return 1;
+        for(int i=1;i<n;i++){
+        
+            if(n%i==0){
+                
+              if(i==1) continue;
+              if(i%2!=0 ) {flag=true;break;}
+            }
+            
+          }
+        if(flag) return 0;
+ return 1;
+    }
+    
+    static int loopSum(int[ ] a, int n){
+    
+    int sum=0,count=0;
+    for(int i=0;i<n;i++){
+
+         if(a.length==count){
+         count=0;
+         }
+           sum=sum+a[count];
+    
+           count++;
+         
+     
+    }
+    
+   return sum; }
+   static  int isMeeraa (int[ ] a){
+     boolean flag=false;
+     int last=a.length-1,count=0,count2=0;
+
+         for(int i=0;i<a.length;i++){
+              
+              if( a[i]%2==0 ){
+                  count++;
+              }
+              if(a[last]%2==0){
+                 last--;
+              count2++;
+             }
+              if(a[i]%2!=0 || a[last]%2!=0){
+                  flag=true;
+                  break;
+              }    
+         }
+         
+         System.out.println(count +" = "+count2);
+         if(flag && count==count2) return 1;
+ return 0;
+         
+     
+     }
+    
+  static int isLayered(int[ ] a){
+        boolean flag=true,flag2=false;int count=0;
+               for(int i=0;i<a.length;i++){
+          for(int j=i+1;j<a.length;j++){
+              if(a[i] > a[j]){
+                  flag=false;
+              }
+            }
+          }
+               
+         for(int i=0;i<a.length;i++){
+          for(int j=0;j<a.length;j++){
+          
+              if(a[i] == a[j]){
+              count++;}
+          }
+            // System.out.println(count);
+         if(count<2 ){return 0;}
+          else count=0;
+         }    
+               
+            //System.out.println(flag2);  
+   if(!flag) return 0;
+   //if(!flag2) return 1;
+               
+               
+ return 1;
+    }
+    static int isNUnique(int [] a , int n){
+    int sum=0,count=0;
+        for(int i=0;i<a.length;i++){
+        for(int j=0;j<a.length;j++){
+              sum=a[i] + a[j];
+              if(sum==n) {count++;}
+         }
+        }
+        
+     if(count > 1) return 0;   
+return 1;        
+    }
+    
+     static int getfactor(int n){
+        
+        int sum=0,count=0;
+         for(int i=1;i<n;i++){
+                if(n%i==0){
+                   sum=sum+i;
+
+                }
+            }
+            
+            if(sum == n) return sum;
+            
+      return sum;  
+    }
+    
+    static int henry(int i , int j){
+        
+        int indexholder=0,indexholder2=0,count=0,firstholder=0,secondholder=0;
+        for(int a=6;;a++){
+           
+            if(getfactor(a) == a){
+              
+                  count++;
+      
+          if(count == i){
+              firstholder=a;
+              indexholder=count;
+              // break;
+          }
+         if(count == j){
+                secondholder=a;
+              indexholder2=count;
+          }
+      
+           
+            
+                }
+  
+     if(indexholder2==j && indexholder == i){
+         break;
+      
+           }
+       
+           
+            
+            
+        }
+      // System.out.println(firstholder + "=" +secondholder);    
+   return firstholder + secondholder;     
+        
+    }
+    
+    public static void insertionSort2(int n, List<Integer> arr) {
+    // Write your code here
+    int temp=0;
+            for(int i=1;i<n;i++){
+                for(int j=0;j<i;j++){
+//                        if(i == n && arr.get(i) > arr.get(j)){
+//                            System.out.println("me");
+//                }
+                        if(arr.get(i) < arr.get(j)){
+                       temp=arr.get(i);
+                          arr.set(i,arr.get(j));
+                        arr.set(j, temp);
+                        
+                    }
+//                    else {
+//                        
+//                      break;
+//                       // break;
+//                    }
+                }
+                
+               for(int k=0;k<arr.size();k++){
+                   System.out.print(arr.get(k)+" ");
+               } 
+               
+               
+               
+                System.out.println();
+                
+            }
+    
+
+    }
+    
+    
+    public static void insertionSort1(int n, List<Integer> arr) {
+    // Write your code here
+    int holder1=arr.get(n-1),holder2=arr.size()-1;
+    boolean flag=false;
+        for(int i=holder2;i>=0;i--){
+           
+            if(i==0){
+                  arr.set(i, holder1) ;
+                  //break;
+                
+            }else{
+            
+        for(int j=i-1;j>=0;j--){
+            
+            if(arr.get(j) > holder1){
+                
+              // System.out.println(i);
+                arr.set(i, arr.get(j)) ;
+                break;
+            }
+            if( holder1 > arr.get(j) ){
+                flag=true;
+                 arr.set(i, holder1) ;
+                 break;
+            }
+            
+           
+        }
+            }       
+              for(int k=0;k<arr.size();k++){
+            System.out.print(arr.get(k)+" ");
+            
+            
+        }
+        
+       
+        if(flag) break;
+        
+             System.out.println();
+        }
+                
+
+    }
+    
+    static int areAnagrams(char [ ] a1, char [ ] a2){
+    
+        boolean flag=false;
+        
+        if(a1.length>a2.length || a2.length >a1.length) return 0;
+        
+        
+        for(int i=0;i<a1.length;i++){
+            for(int j=0;j<a2.length;j++){
+                if(a1[i] == a2[j]){
+                    flag=true;
+                    break;
+                }
+                else flag=false;
+            }
+            if(!flag) return 0;
+        }
+        
+    return 1;    
+    
+    }
+    
+    
+    
+    static int isHodder(int n){
+    int mul=1,sub=0;boolean flag=false;
+    
+    if(isprime(n) ==1){
+       for(int i=0;i<n;i++){
+           mul=2*mul;
+           sub=mul-1;
+           if(sub>n) {
+           break;}
+           if(sub==n){
+           flag=true;break;}
+       }
+    }
+   if(flag) return 1;  
+return 0;    
+    }
+    
+    static int matchPattern(int[] a, int[] pattern) {
+    
+       int count=0;
+       
+       for(int i=0;i<pattern.length;i++){
+          // System.out.println(a[i]);
+          for(int j=count;j<a.length;j++){
+             
+               if(a[count] == pattern[i]){ System.out.println(count);
+                   
+                  count++;
+                  // System.out.println(pattern[i]);
+                 }
+               else{
+              // count=0;
+               break;}
+           }
+
+       }
+       
+       if(count!=a.length) return 0;
+       
+return 1;
+    }
+    
+   static int isMartian(int[ ] a){
+     int countone=0,counttwo=0,countadj=1;  
+     boolean flag=false;
+       for(int i=0;i<a.length;i++){
+
+             if(a[i] == 1){
+               countone++;
+           }
+           if(a[i] == 2){
+               counttwo++;
+           }  
+
+       }
+       
+      for(int i=0;i<a.length;i+=2){
+           for(int j=i+1;j<a.length;j+=2){
+               if(a[i]==a[j]){
+                   flag=true;
+                   break;
+               }
+           }
+       }
+       
+     if(countone <= counttwo || flag){
+return 0;     }
+       
+       System.out.println( countone + " == " + counttwo + flag);
+       return 1;
+    }
+    
+    
+          static int[] computeHMS(int seconds)
+        {
+            int secondsData = 3600;
+            int[] arr = new int[3];
+
+            for (int i = 0; i < arr.length; i++)
+            {
+                arr[i] = seconds / secondsData;
+                System.out.println(arr[i]);
+                seconds = seconds % secondsData;
+                  System.out.println(seconds);
+                secondsData = secondsData / 60;
+                  System.out.println(secondsData);
+            }
+            return arr;
+        }
+    
+  static  int is235Array(int[ ] a){
+  int arraysize=a.length,sum=0,count=0,count2=0;
+  
+ for(int i=0;i<a.length;i++){
+     
+        if(a[i]%2==0  ){
+              count++;
+        }
+       if( a[i]%3==0 ){
+            count++;
+      }
+       if( a[i]%5==0 ){
+            count++;
+      }
+       
+       if(a[i]%2!=0  && a[i]%3!=0  && a[i]%5!=0 ){
+           count++;
+       }
+  
+
+ 
+ }
+      System.out.println(count);
+  if(count == arraysize){
+      return 1;
+  }
+  
+  
+  return 0;
+  
+  }
+    
+    static int isMercurial(int[ ] a){
+    int startpoint =-1,endpoint=-1,count=0;
+    if(a.length<=1 ){return 1;
+    }
+    for(int i=0;i<a.length;i++){
+        
+         for(int j=0;j<a.length;j++){
+             
+             if(startpoint == j)continue;
+            // System.out.println(a[i]);
+             if(a[j] == 1 && count==0){startpoint=j;count++;break;}
+             else if(count>0 && a[j] == 1){endpoint=j;count++;}
+             //     
+         }
+    }
+    if(startpoint == endpoint){return 1;
+    }
+    for(int i=0;i<=endpoint;i++){
+        if(i>=startpoint){
+        if(a[i] ==3) return 0;
+        }
+        
+    }
+    
+       // System.out.println(startpoint + "&&"+ endpoint);
+   return 1; 
+    }
+    
+    
+     public static int  isMadhavArray2(int[]a){
+
+        int length = a.length;
+
+
+        int tmp=0;
+        for (int i=0;i<length/2;i++){ // 判断长度是否满足条件 n*(n+1)/2
+            int x = i*(i+1)/2;
+            if (x ==length){
+                tmp =1;
+            }
+        }
+        if (tmp==0){
+            return 0;
+        }
+
+        for (int i=1;i<=length/2;++i){
+            int sum =0;
+            for (int j = i*(i+1)/2 ; j< i+1;j++){ // a[2]+a[3] 和的实现
+                sum = sum + a[j]+a[j+1];
+
+            }
+            if (sum != a[0]){
+                return 0;
+            }else {
+                return 1;
+            }
+        }
+        return 0;
+    }
+    static int isMadhavArray(int[ ] a){
+    
+        int count=2,i=1,sum=0;
+        boolean flag=false;
+        while(count<a.length){
+            
+            while(i<=count){
+                
+                sum=sum+a[i];
+                if(sum == a[0]){
+                    flag=true;
+                count++;
+                break;
+                
+                    }
+               i++;
+            }
+            i++;
+            if(i<a.length) break;
+           //System.out.println(i);
+        }
+        
+     if(flag) return 1;
+ return 0;
+    }
+    
+    static int decodeArray2(int[ ] a){
+    int count=0;
+    int holder=0;
+    boolean flag=false;
+    for(int i=0;i<a.length;i++){
+     
+       if(a[i] < 0){
+           flag=true;
+       }
+       
+       
+       
+        if(a[i] == 0){count++;}
+        else{
+        if(count>0){
+            holder=holder*10;
+            holder=holder+count;
+          
+           // cc=holder;
+            count=0;
+           // holder=0;
+             // System.out.println(count);
+       }else{
+            
+           a[i]=0;
+            holder=holder*10;
+            holder=holder+count;
+          // count=0;
+           }
+        }
+        
+    }
+    
+if(flag) return -1*holder;
+    return holder;
+    }
+    static int isDigitIncreasing(int a){
+        int sum=0;
+        for(int i=1;i<9;i++){
+            int holder=0;
+            while(a > holder){
+            holder*=10;
+           sum=sum+ holder+i;
+           // sum=sum+holder;
+                //System.out.println(sum);
+            if(a == sum){
+                return 1;
+            }
+            }
+        }
+    return 0;
+    }
+    
+    static int isZeroPlentiful(int[ ] a){
+    int holder=0,count=0;
+    for(int i=0;i<a.length;i++){
+        if(a[i]!=0) continue;
+        
+        if(a[i] == 0){
+           count++;
+           
+        }
+
+        if(count >=4){ holder++;count=0;}
+       
+     //if(count > 4) return 1;   
+        
+        //System.out.println(count);
+        
+    }
+     return holder;   
+    }
+    static int decodeArray(int [] a){
+        
+        int holder=0,diff=0,count=1;
+        for(int i=0;i<=a.length-1;i++){
+              if(count == a.length) break;
+              //  diff
+             diff=-1*(a[i] - a[count]);
+             if(diff <0){
+                 diff*=-1;
+             }
+             
+             //System.out.println(diff);
+             holder=holder*10;
+             holder=holder+diff;
+             
+              // System.out.println(a[i]);
+        count++;
+//    if(j  a.length) break;
+        }
+       
+       if(a[0] < 0) return -1*holder;
+ return holder;
+    }
+    
+    public static int[] doIntegerBasedRounding(int[] a, int n){
+if (n > 0)
+{
+for (int i=0; i<a.length; i++)
+{
+if (a[i] > 0)
+{
+int rem = a[i] % n;
+a[i] = a[i] - rem + (rem>=n/2 ? n : 0);
+}
+}
+}
+return a;
+}
+    
+
+    
+    static int isCubePowerful(int n){
+        int sum=0;
+        int temp=n;
+        while(n>0){
+            int rem=n%10;
+            
+            sum=sum+sqare(rem);
+            
+          n/=10;  
+            
+        }
+        
+        //System.out.println(sum);
+      if(sum == temp){return 1;}  
+ return 0; 
+    }
+       static int sqare(int n){
+       int mul=1;
+       
+       for(int i=0;i<3;i++){
+           mul=mul*n;
+       }
+       return mul;
+       }
+    
+      static int[] encodeNumber(int n){
+     
+         int [] arr=new int[countprime(n)];
+     
+      int count=0,i=2;
+         while(n>1){
+             
+             if(isprime(i)==1){
+                 if(n%i==0){
+                     arr[count]=i;
+                     n=n/i;
+                  //   i++;
+                  count++;
+                 }
+                 else{i++;}
+                 
+             }
+             else{
+             i++;
+             }
+             
+         }
+     return arr;
+     }
+     
+    
+    
+     static int countprime(int n){
+         int count=0;
+         for(int i=2;i<n;i++){
+        
+         while(n>1){
+             
+             if(isprime(i)==1){
+                 if(n%i==0){
+                     count++;
+                    // System.out.println(i);
+                     n=n/i;
+                  //   i++;
+                 }
+            
+                 
+             }
+           
+            
+             
+         }
+          }
+        return count; 
+     }
+    
+    
+    
+    
+
+
+   
+    
+    
+    static int ff(int[] a){
+    
+       if (a.length < 3) return -1;
+ int i = 0;
+ int j = a.length - 1;
+ int idx = 1;
+ int leftSum = a[i];
+ int rightSum = a[j];
+ for (int k = 1; k < a.length - 2; k++)
+ {
+ if (leftSum < rightSum)
+ {
+i++;
+leftSum += a[i];
+idx = i + 1;
+ }
+ else
+ {
+j--;
+rightSum += a[j];
+idx = j - 1;
+ }
+ }
+ if (leftSum == rightSum)
+ return idx;
+ else
+ return -1;
+    
+    }
+    
+    static boolean check(int sum,int i,int[] a){
+        boolean flag=false;
+        int sum2=0;
+     for(int j=0;j<=i;j++){
+         
+      
+     }
+   return flag; 
+    }
+    
+    static int  encodearray(int n){
+        int total=0,count=0;
+       
+        while(n>0){
+            int digit=n%10;
+            count++;
+            total=total+digit;
+            n=n/10;
+        }
+        
+        
+        
+        return total+count;
+    }
+    static int bean(int [] a){
+    boolean found=false;
+        for(int i=0;i<a.length;i++){
+                    int sum=a[i] +1;
+                    int sub=a[i] -1;
+            for(int j=0;j<a.length;j++){
+                if(a[j] == sub || a[j] == sum){
+                found=true;
+                break;
+                }
+            }        
+               //if(!found) break;     
+                }
+
+    if(!found) return 0;
+    
+        
+        return 1;
+    }
+    
+    static int merra(int [] a){
+    boolean foundzero =false,foundprime=false;
+        for(int i=0;i<a.length;i++){
+            if(a[i] == 0){
+                foundzero=true; 
+                //break;
+            }
+            if(isprime(a[i]) == 1){
+                foundprime=true;
+            }
+        }
+      if(foundzero && foundprime){
+          return 1;
+      } 
+      else if (!foundzero && !foundprime){
+      return 1;
+      }
+      
+
+      
+      
+        
+        
+  return 0;  
+    }
+    
+    static int isprime(int a){
+    boolean flag=false;
+        for(int i=2;i<=a/2;i++){
+            if(a%i==0){
+                flag=true;
+                break;
+            }
+        }
+        
+        if(!flag) return 1;
+        
+return 0;
+    }
+    
+        static int fab (int a){
+            int sum=0;boolean flag=false;
+            if(a==1){
+            return 1;}
+            for(int i=2;;i++){
+                sum=sum+i;
+                if(sum==a){
+                    flag=true;
+                    break;
+                }
+            }
+            
+          if(flag) return 1;  
+return 0;
+        }
+    static int goodSpread (int[ ] a){
+    boolean flag=true;int count=0;
+    for(int i=0 ;i<a.length;i++){
+          for(int j=i+1 ;j<a.length;j++){
+        
+              if(a[i] == a[j]){
+                  count++;
+              }
+               
+       }
+          if(count>=3){
+              flag=false;
+               }
+    }
+     
+    if(flag) return 1;
+return 0;
+    } 
+    static int isMeera(int [] a){
+        int count=0,count2=0,last=a.length-1;
+        boolean flag=false;
+        for(int i=0;i<a.length;i++){
+           if(a[i]%2==0){
+               count++;
+           } 
+           if(a[last]%2==0){
+               count2++;
+           } 
+           
+           if(a[last]%2!=0 || a[i]%2!=0){
+               if(count==count2){
+                   flag=true;
+               break;
+               }
+               else{
+               break;}
+           }
+           last--;
+        }
+        if(flag) return 1;
+return 0;
+        
+    }
+    
+    static int factorTwoCount(int n){
+    int count=0;
+    
+    for(int i=0;i<=n;i++){
+
+        if(n%2==0){
+            count++;
+            n=n/2;
+
+        }
+              
+    }
+   return count; 
+    }
+    
+    static int isSym (int [ ] a){
+    
+        int mid=a.length/2;
+        int last=a.length-1;
+        if(a.length%2!=0){
+        for(int i=0;i<mid;i++){
+             if(a[i]%2==0 && a[last]%2==0){
+                 last--;
+             }
+             else if(a[i]%2!=0 && a[last]%2!=0){
+                 last--;
+             }
+             else{
+                 return 0;
+             }
+        }   }
+        else{
+             for(int i=0;i<mid-1;i++){
+             if(a[i]%2==0 && a[last]%2==0){
+                 last--;
+             }
+             else if(a[i]%2!=0 && a[last]%2!=0){
+                 last--;
+             }
+             else{
+                 return 0;
+             }
+        }
+        }
+     return 1;   
+    }
+    
+    
+    static int isSuper(int [] a){
+        int sum=0,count=1;boolean flag=true;
+        for(int i=0;i<a.length-1;i++){
+        sum=sum+a[i];
+        if(sum < a[count] ){
+        count++;
+        }
+        else{
+        flag=false;
+        break;
+        }
+        }
+        if(flag) return 1;
+  return 0;
+    }
+    
+    static int isOddSpaced(int[] a){
+        int diff=0,count2=0,max=a[0],min=a[0];
+        
+        if(a.length <2){
+            return 0;
+        }
+        
+        for(int i=0;i<a.length;i++){
+            if(a[i] > max){
+            max=a[i];
+            }
+            
+             if(a[i]<min){
+          
+            min=a[i];
+            }
+        }
+        diff=max-min;
+        if(diff%2!=0){
+            return 1;
+        }
+        
+    return 0;    
+        
+    }
+    
+    
+    
+    static int maxmin(int [] a){
+        
+        int count=0,count2=0,max=a[0],min=a[0];
+        
+        for(int i=0;i<a.length;i++){
+            if(a[i] > max){
+            max=a[i];
+            }
+            
+             if(a[i]<min){
+          
+            min=a[i];
+            }
+        }
+           System.out.println(max);
+       
+         
+         for(int i=0;i<a.length;i++){
+             if(a[i] == max){
+                    count++;
+             }
+             else if(a[i] == min){
+                   count2++;
+             }
+         }
+         
+             // System.out.println(count2);
+         if(count == count2 && count>0 && count2>0){
+             return 1;
+         }
+    return 0;    
+    }
+    
+    static int live(int [] a ,int m , int n){
+        
+        boolean flag=false;
+        
+        if(smallerfound(a[0], a,m,n)){
+            for(int i=m;i<=n;i++){
+                for(int j=1;j<a.length;j++){
+                    
+                    if(i== a[j]){
+                        flag=true;
+                        break;
+                    }
+                    
+                }
+            }
+        }
+        
+        if(flag){
+            return 1;
+        }
+     
+     
+        
+        return 0;
+    }
+    
+    static boolean smallerfound(int smallern,int [] a ,int m,int n){
+       boolean flag=false,flag2=true;
+       int max=a[0];
+       
+        for(int i=1;i<a.length;i++){
+            if(smallern < a[i]){
+                
+                flag=true;
+            }
+        }
+        
+        for(int i=0;i<a.length;i++){
+            if(max < a[i]){
+               max=a[i]; 
+            }
+        }
+        int counter=0;
+        for(int i=m;i<=n;i++){
+            for(int j=0;j<a.length;j++){
+                
+                if(i == a[j]){
+                   break;
+                }
+                 else{
+                        counter++;
+                      //  flag2=false;
+                     
+                    }
+            }
+           if(counter == n){ flag2=false;break;}
+        }
+
+        if(flag && flag2) 
+        {
+            if(smallern == m && max == n){
+                  return true;
+            }
+               
+        }
+   
+        
+    return false;
+        
+    }
+    
+}
